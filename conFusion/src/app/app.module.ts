@@ -30,6 +30,7 @@ import { PromotionService } from './services/promotion.service';
 import { LeaderService} from './services/leader.service';
 import 'hammerjs';
 import { LoginComponent } from './login/login.component';
+import { MatSliderModule } from '../../node_modules/@angular/material';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     MatFormFieldModule, 
     MatInputModule,
+    MatSliderModule,
     MatCheckboxModule,
     MatSelectModule,
     MatSlideToggleModule,
