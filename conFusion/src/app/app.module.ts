@@ -38,6 +38,7 @@ import 'hammerjs';
 import { LoginComponent } from './login/login.component';
 import { MatSliderModule } from '@angular/material';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
     AboutComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent
+    LoginComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
