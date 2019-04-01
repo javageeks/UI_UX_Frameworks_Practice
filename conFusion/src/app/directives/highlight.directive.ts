@@ -1,5 +1,4 @@
-import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
-
+import { Directive, ElementRef, Renderer2, HostListener  } from '@angular/core';
 
 @Directive({
   selector: '[appHighlight]'
@@ -16,5 +15,4 @@ export class HighlightDirective {
   @HostListener('mouseleave') onMouseLeave() {
     this.renderer.removeClass(this.el.nativeElement, 'highlight');
   }
-
 }

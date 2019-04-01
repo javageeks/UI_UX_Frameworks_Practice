@@ -7,7 +7,8 @@
     fxLayoutGap.xs="0">
 
 
-  <div fxFlex="40" *ngIf="dish">
+  
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
     <div fxFlex>
       <mat-card>
         <mat-card-header>
@@ -33,7 +34,7 @@
   </div>
 
 
-  <div fxFlex="40" *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility" [@expand]>
     <div fxFlex>
       <mat-list>
         <h3>Comments</h3>
