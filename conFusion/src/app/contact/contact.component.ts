@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Feedback, ContactType } from '../shared/feedback';
-import { flyInOut, expand } from '../animations/app.animation';
+import { flyInOut, expand, visibility, hide } from '../animations/app.animation';
+import { FeedbackService } from '../services/feedback.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -13,12 +14,17 @@ import { flyInOut, expand } from '../animations/app.animation';
     },
     animations: [
       flyInOut(),
+      visibility(),
+      hide(),
       expand()
     ]
 })
 export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
+  errMess:string;
+  visibilityForm = 'shown';
+  visibilitySpinner = 'hidden';
   contactType = ContactType;
   formErrors = {
     'firstname': '',
@@ -48,7 +54,11 @@ export class ContactComponent implements OnInit {
     },
   };
   @ViewChild('fform') feedbackFormDirective;
-  constructor(private fb: FormBuilder) {this.createForm();}
+  constructor(private fb: FormBuilder,
+  private feedbackService: FeedbackService) 
+  {
+    this.createForm();
+  }
 
   ngOnInit() {
   }
@@ -73,7 +83,6 @@ export class ContactComponent implements OnInit {
     const form = this.feedbackForm;
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
-        // clear previous error message (if any)
         this.formErrors[field] = '';
         const control = form.get(field);
         if (control && control.dirty && !control.valid) {
@@ -88,8 +97,18 @@ export class ContactComponent implements OnInit {
     }
   }
   onSubmit() {
-    this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
+    this.visibilityForm = 'hidden';
+    this.visibilitySpinner = 'shown';
+    this.feedbackService.submitFeedback(this.feedbackForm.value)
+      .subscribe(feedback => {
+        this.visibilitySpinner = 'hidden';
+        this.feedback = feedback;
+        setTimeout(func=>{
+          this.feedback = null;
+          this.visibilityForm = 'shown';
+          }, 5000);
+
+      });
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
