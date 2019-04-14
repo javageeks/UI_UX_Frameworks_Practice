@@ -169,3 +169,55 @@ while (n > 0) {
    n = Math.floor(n / 10);
 }
 console.log("Sum of the digits of " + num + " = " + sum);
+
+var x;
+for (x = 1; x < 5; x=x+2) {
+  console.log(x+1);
+}
+
+var product =1;
+for(var num =1; num<=10; num++){
+    product = product*num;
+    console.log(product);
+}
+var n = 14;
+
+for(var num =0; num<n ; num++){
+    if(num % 2 == 0 || num % 3 == 0 || num % 6 == 0){
+        console.log(num);
+    }
+}
+
+// var a = 1;
+// var b = 1;
+
+// while(c<=n)
+// {
+//     System.out.print(c+" ");
+//     a=b;
+//     b=c;
+//     c=a+b;
+// }
+var a = 1, b = 1, f;
+/* complete this "for" loop */
+for(var i=3; i <= 15 ;i++)
+{
+    f = a + b;
+    a = b;
+    b = f;
+}
+
+console.log(f)
+for(i = 1 ; i < 10 ; i++){
+    if(i % 3 === 0){
+        continue;
+    }
+    console.log(i);
+}
+
+for(i = 1 ; i < 10 ; i++){
+    console.log(i);
+    if(i % 3 === 0){
+        break;
+    }
+}
