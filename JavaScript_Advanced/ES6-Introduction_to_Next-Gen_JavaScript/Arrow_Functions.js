@@ -1,4 +1,4 @@
-// Function before ES6
+// Function before ES6 i.e ES5
 
 function print(firstName, lastName){
     return firstName+" "+lastName;
