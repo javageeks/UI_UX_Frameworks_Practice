@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+   <title>Avance JavaScript</title>
+   <script  src="Ways_to_Define_Consumers.js">
+	
+    </script>
+</head>
+<body>
+    <h2>Advanced JavaScript Concepts:</h2>
+    <h3>Ways to Define Consumers</h3> 
+    <p>
+            WAY 1: <br>
+
+            Define a then() method with only TWO arguments – first as the successCallbackHandler and the second as the errorCallbackHandler.<br>
+            NO need to define the catch() method.<br>
+            
+            The then() method will be used to handle both - the success as well as the error(s).<br>
+            
+             
+            
+            .then(successCallback, errorCallback)<br>
+
+            <br> <br>
+            WAY 2:<br>
+
+Define a then() method with only ONE argument as the successCallbackHandler.<br>
+DEFINE a catch() method with one argument as errorCallbackHandler.<br>
+
+The then() method will handle the success whereas the catch() method will handle the error(s). <br>
+ 
+
+.then(successCallback)<br>
+.catch(errorCallback)<br>
+    </p>
+</body>
+</html>

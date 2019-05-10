@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+   <title>Avance JavaScript</title>
+   <script  src="then_and_catch_Methods_as_Consumers.js">
+	
+    </script>
+</head>
+<body>
+    <h2>Advanced JavaScript Concepts:</h2>
+    <h3>'then' & 'catch' Methods as Consumers</h3> 
+    <h5>then</h5>
+<p>
+        Syntax of then() method: <br>
+        // assume that the promise object named promiseObj already exists consisting of producer code <br>
+promiseObj.then(successCallback, errorCallback);
+
+</p>
+<p>
+        Syntax of then() method: <br>
+        // writing the callbacks <br>
+promiseObj.then((parametersToHoldArgumentsPassedWhenPromiseIsResolved) => { <br>
+// code to execute when promise is resolved <br>
+}, (parametersToHoldArgumentsPassedWhenPromiseIsRejected) => { <br>
+// code to execute when promise is rejected <br>
+}); <br>
+</p>
+
+<p>
+        Syntax of then() method:<br>
+        promiseObj.then((value) => { <br>
+            // code for promise is resolved <br>
+        }, (error) => { <br>
+            // code for promise is rejected <br>
+        }); <br>
+</p>
+
+<h5>Catch</h5>
+<p>
+        Syntax of catch() method:<br>
+
+        // assume that the promise object named promiseObj already exists consisting <br>
+        promiseObj.catch(errorCallback);<br>
+         
+
+        Simplifying the argument (errorCallback) as a callback, will reduce the above syntax to the one written below:
+        <br>        <br>        <br>
+        Syntax of catch() method:<br>
+        
+        // writing the callback        <br>
+        promiseObj.catch((parametersToHoldArgumentsPassedWhenPromiseIsRejected) => {        <br>
+        // code to execute when promise is rejected        <br>
+        });        <br>        <br>
+         
+        
+        Now, simplifying the parameters of the errorCallback handler will reduce the above syntax to the following:
+        <br>         <br>         <br>
+        Syntax of catch() method:        <br>
+        
+        promiseObj.catch((err) => {        <br>
+            // code to be executed when promise is rejected        <br>
+        });        <br>
+</p>
+</body>
+</html>
